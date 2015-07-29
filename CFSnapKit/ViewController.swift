@@ -12,12 +12,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        let redView = UIView()
+        redView.backgroundColor = UIColor.redColor()
+        self.view.addSubview(redView)
+        
+        let insets = UIEdgeInsetsMake(10, 10, 10, 10)
+        let widht: CGFloat = 200
+        let height: CGFloat = 120
+        
+        redView.cf_snp_center(CGPointMake(0, 0), width: 160, height: 100)
+        
     }
 
 

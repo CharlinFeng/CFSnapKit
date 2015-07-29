@@ -487,6 +487,7 @@
 				894BA1FE1B37FB75005A13BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		894BA1FF1B37FB75005A13BE /* Build configuration list for PBXNativeTarget "CFSnapKitTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +496,7 @@
 				894BA2011B37FB75005A13BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
