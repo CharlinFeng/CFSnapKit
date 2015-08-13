@@ -20,9 +20,7 @@ class ViewController: UIViewController {
         let insets = UIEdgeInsetsMake(10, 10, 10, 10)
         let widht: CGFloat = 200
         let height: CGFloat = 120
-        
-        redView.cf_snp_center(CGPointMake(0, 0), width: 160, height: 100)
-        
+        redView.make_right_WH(right: 10, offsetY: 100, width: 100, height: 80)
     }
 
 
