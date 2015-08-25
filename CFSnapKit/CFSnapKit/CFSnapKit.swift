@@ -238,10 +238,168 @@ extension UIView {
             make.trailing.equalTo(sv!.snp_trailing).offset(-right)
             make.width.equalTo(width)
             make.height.equalTo(height)
+
         }
     }
     
     
     
+    /** 宽度约束 */
+    func make_width(#equal: CGFloat) {
+
+        self.snp_makeConstraints { (make) -> Void in
+            make.width.equalTo(equal)
+        }
+    }
     
+    /** 高度约束 */
+    func make_height(#equal: CGFloat) {
+        
+        self.snp_makeConstraints { (make) -> Void in
+            make.height.equalTo(equal)
+        }
+    }
+    
+    
+
+    /**
+    多个View之间的单条约束
+    
+    :param: sd self.direction
+    :param: v  view
+    :param: vdEnum view.direction
+    :param: o  offsetValue
+    */
+    func make_relation(#sd: Int, v: UIView!, vd: Int, o: CGFloat) -> ConstraintDescriptionEditable!{
+        
+        let superView = self.superview
+        
+        if superview == nil {return nil}
+        
+        let relationView = v ?? superview!
+
+        var c: ConstraintDescriptionEditable! = nil
+    
+        let sdEnum = Direction(rawValue: sd)
+        let vdEnum = Direction(rawValue: vd)
+        
+        if sdEnum == .Top {
+            
+            if vdEnum == .Top {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.top.equalTo(relationView.snp_top).offset(o)
+                })
+                
+            }else if vdEnum == .Left {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.top.equalTo(relationView.snp_leading).offset(o)
+                })
+                
+            }else if vdEnum == .Bottom {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.top.equalTo(relationView.snp_bottom).offset(-o)
+                })
+            }else if vdEnum == .Right {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.top.equalTo(relationView.snp_trailing).offset(-o)
+                })
+            }
+            
+        }else if sdEnum == .Left {
+            
+            if vdEnum == .Top {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.leading.equalTo(relationView.snp_top).offset(o)
+                })
+                
+            }else if vdEnum == .Left {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.leading.equalTo(relationView.snp_leading).offset(o)
+                })
+                
+            }else if vdEnum == .Bottom {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.leading.equalTo(relationView.snp_bottom).offset(-o)
+                })
+                
+            }else if vdEnum == .Right {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.leading.equalTo(relationView.snp_trailing).offset(-o)
+                })
+            }
+        }else if sdEnum == .Bottom {
+            
+            if vdEnum == .Top {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.bottom.equalTo(relationView.snp_top).offset(o)
+                })
+                
+            }else if vdEnum == .Left {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.bottom.equalTo(relationView.snp_leading).offset(o)
+                })
+                
+            }else if vdEnum == .Bottom {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.bottom.equalTo(relationView.snp_bottom).offset(-o)
+                })
+                
+            }else if vdEnum == .Right {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.bottom.equalTo(relationView.snp_trailing).offset(-o)
+                })
+            }
+            
+        }else if sdEnum == .Right {
+            
+            if vdEnum == .Top {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.trailing.equalTo(relationView.snp_top).offset(o)
+                })
+                
+            }else if vdEnum == .Left {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.trailing.equalTo(relationView.snp_leading).offset(o)
+                })
+                
+            }else if vdEnum == .Bottom {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.trailing.equalTo(relationView.snp_bottom).offset(-o)
+                })
+                
+            }else if vdEnum == .Right {
+                
+                self.snp_makeConstraints({ (make) -> Void in
+                    c = make.trailing.equalTo(relationView.snp_trailing).offset(-o)
+                })
+            }
+        }
+        
+        return c
+    }
+    
+
+    /** 方位 */
+    enum Direction: Int{
+        
+        case Top,Left,Bottom,Right
+    }
 }
+
+
+
