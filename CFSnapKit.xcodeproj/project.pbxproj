@@ -22,7 +22,6 @@
 		89C83FBF1BB1392100F154CF /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C83FB11BB1392100F154CF /* ConstraintRelation.swift */; settings = {ASSET_TAGS = (); }; };
 		89C83FC01BB1392100F154CF /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C83FB21BB1392100F154CF /* Debugging.swift */; settings = {ASSET_TAGS = (); }; };
 		89C83FC11BB1392100F154CF /* EdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C83FB31BB1392100F154CF /* EdgeInsets.swift */; settings = {ASSET_TAGS = (); }; };
-		89C83FC21BB1392100F154CF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89C83FB41BB1392100F154CF /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		89C83FC31BB1392100F154CF /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C83FB51BB1392100F154CF /* LayoutConstraint.swift */; settings = {ASSET_TAGS = (); }; };
 		89C83FC41BB1392100F154CF /* SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C83FB71BB1392100F154CF /* SnapKit.swift */; settings = {ASSET_TAGS = (); }; };
 		89C83FC51BB1392100F154CF /* View+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C83FB81BB1392100F154CF /* View+SnapKit.swift */; settings = {ASSET_TAGS = (); }; };
@@ -59,7 +58,6 @@
 		89C83FB11BB1392100F154CF /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
 		89C83FB21BB1392100F154CF /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
 		89C83FB31BB1392100F154CF /* EdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgeInsets.swift; sourceTree = "<group>"; };
-		89C83FB41BB1392100F154CF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89C83FB51BB1392100F154CF /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
 		89C83FB61BB1392100F154CF /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
 		89C83FB71BB1392100F154CF /* SnapKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapKit.swift; sourceTree = "<group>"; };
@@ -162,7 +160,6 @@
 				89C83FB11BB1392100F154CF /* ConstraintRelation.swift */,
 				89C83FB21BB1392100F154CF /* Debugging.swift */,
 				89C83FB31BB1392100F154CF /* EdgeInsets.swift */,
-				89C83FB41BB1392100F154CF /* Info.plist */,
 				89C83FB51BB1392100F154CF /* LayoutConstraint.swift */,
 				89C83FB61BB1392100F154CF /* SnapKit.h */,
 				89C83FB71BB1392100F154CF /* SnapKit.swift */,
@@ -253,7 +250,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89C83FC21BB1392100F154CF /* Info.plist in Resources */,
 				894BA1E81B37FB75005A13BE /* Main.storyboard in Resources */,
 				894BA1ED1B37FB75005A13BE /* LaunchScreen.xib in Resources */,
 				894BA1EA1B37FB75005A13BE /* Images.xcassets in Resources */,
