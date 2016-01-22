@@ -17,6 +17,8 @@ class ViewController: UIViewController {
         redView.backgroundColor = UIColor.redColor()
         self.view.addSubview(redView)
         redView.make_top_WH(top: 60, offsetX: 10, width: 200, height: 40)
+
+
         
     }
 
