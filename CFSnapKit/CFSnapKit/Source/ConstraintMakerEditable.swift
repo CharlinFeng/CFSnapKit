@@ -21,7 +21,36 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#if os(iOS) || os(tvOS)
+    import UIKit
+#else
+    import AppKit
+#endif
 
-FOUNDATION_EXPORT double SnapKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char SnapKitVersionString[];
+
+public class ConstraintMakerEditable: ConstraintMakerPriortizable {
+
+    @discardableResult
+    public func multipliedBy(_ amount: ConstraintMultiplierTarget) -> ConstraintMakerEditable {
+        self.description.multiplier = amount
+        return self
+    }
+    
+    @discardableResult
+    public func dividedBy(_ amount: ConstraintMultiplierTarget) -> ConstraintMakerEditable {
+        return self.multipliedBy(1.0 / amount.constraintMultiplierTargetValue)
+    }
+    
+    @discardableResult
+    public func offset(_ amount: ConstraintOffsetTarget) -> ConstraintMakerEditable {
+        self.description.constant = amount.constraintOffsetTargetValue
+        return self
+    }
+    
+    @discardableResult
+    public func inset(_ amount: ConstraintInsetTarget) -> ConstraintMakerEditable {
+        self.description.constant = amount.constraintInsetTargetValue
+        return self
+    }
+    
+}

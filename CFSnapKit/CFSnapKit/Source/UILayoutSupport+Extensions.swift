@@ -21,7 +21,16 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#if os(iOS) || os(tvOS)
+    import UIKit
+#endif
 
-FOUNDATION_EXPORT double SnapKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char SnapKitVersionString[];
+    
+@available(iOS 8.0, *)
+public extension ConstraintLayoutSupport {
+    
+    public var snp: ConstraintLayoutSupportDSL {
+        return ConstraintLayoutSupportDSL(support: self)
+    }
+    
+}

@@ -21,7 +21,55 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#if os(iOS) || os(tvOS)
+    import UIKit
+#else
+    import AppKit
+#endif
 
-FOUNDATION_EXPORT double SnapKitVersionNumber;
-FOUNDATION_EXPORT const unsigned char SnapKitVersionString[];
+
+public protocol ConstraintMultiplierTarget {
+    
+    var constraintMultiplierTargetValue: CGFloat { get }
+    
+}
+
+extension Int: ConstraintMultiplierTarget {
+    
+    public var constraintMultiplierTargetValue: CGFloat {
+        return CGFloat(self)
+    }
+    
+}
+
+extension UInt: ConstraintMultiplierTarget {
+    
+    public var constraintMultiplierTargetValue: CGFloat {
+        return CGFloat(self)
+    }
+    
+}
+
+extension Float: ConstraintMultiplierTarget {
+    
+    public var constraintMultiplierTargetValue: CGFloat {
+        return CGFloat(self)
+    }
+    
+}
+
+extension Double: ConstraintMultiplierTarget {
+    
+    public var constraintMultiplierTargetValue: CGFloat {
+        return CGFloat(self)
+    }
+    
+}
+
+extension CGFloat: ConstraintMultiplierTarget {
+    
+    public var constraintMultiplierTargetValue: CGFloat {
+        return self
+    }
+    
+}
