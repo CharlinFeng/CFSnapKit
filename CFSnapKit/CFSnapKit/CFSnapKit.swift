@@ -170,7 +170,8 @@ extension UIView {
         
         self.snp.makeConstraints{ (make) -> Void in
             
-            make.center.equalTo(sv!.snp.center).offset(offsest as! ConstraintOffsetTarget)
+            make.centerX.equalTo(sv!.snp.centerX).offset(offsest.x)
+            make.centerY.equalTo(sv!.snp.centerY).offset(offsest.y)
             make.width.equalTo(width)
             make.height.equalTo(height)
         }
